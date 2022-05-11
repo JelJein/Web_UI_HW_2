@@ -16,11 +16,11 @@ public class HomeWorkThree {
         options.addArguments("--incognito");
         options.addArguments("start-maximized");
 
-
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://www.livejournal.com/");
 
+        // Логин в систему
         WebElement hwFirst = driver.findElement(By.xpath("//a[contains(text(),'Войти')]"));
         hwFirst.click();
 
@@ -36,8 +36,41 @@ public class HomeWorkThree {
         WebElement enterButton = driver.findElement(By.xpath("//button[@name='action:login' and 'Войти']"));
         enterButton.click();
 
-        WebElement headerToExit = driver.findElement(By.cssSelector(".s-header-item--user"));
-        headerToExit.click();
+        // Тест перехода в Мои фотографии
+        String head = ".s-header-item--user";
+
+        //WebElement headerClickPhoto = driver.findElement(By.cssSelector(head));
+        //headerClickPhoto.click();
+
+        driver.navigate().to("https://testingonetv.livejournal.com/pics/catalog");
+
+        //WebElement myPhoto = driver.findElement(By.xpath("//a[contains(text(),'Мои фотографии')]"));
+        //myPhoto.click();
+
+        // Тест перехода в Мои видео
+        //WebElement headerClickVideo = driver.findElement(By.cssSelector(head));
+        //headerClickVideo.click();
+
+        driver.navigate().to("https://testingonetv.livejournal.com/video");
+
+        //WebElement myVideo = driver.findElement(By.xpath("//a[contains(text(),'Мое видео')]"));
+        //myVideo.click();
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Логаут из системы
+        WebElement headerClickExit = driver.findElement(By.cssSelector(head));
+        headerClickExit.click();
 
         driver.navigate().to("https://www.livejournal.com/logout.bml?ret=1&user=testingonetv&sessid=93");
 
