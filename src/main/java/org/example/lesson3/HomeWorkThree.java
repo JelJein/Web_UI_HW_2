@@ -25,8 +25,11 @@ public class HomeWorkThree {
         WebElement hwFirst = driver.findElement(By.xpath("//a[contains(text(),'Войти')]"));
         hwFirst.click();
 
+        Integer a = 250;
+        Integer b = 3000;
+
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -35,7 +38,7 @@ public class HomeWorkThree {
         userName.sendKeys("TestingOneTV");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -44,7 +47,7 @@ public class HomeWorkThree {
         userPassword.sendKeys("JustForTest1987");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -53,7 +56,7 @@ public class HomeWorkThree {
         checkBox.click();
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -64,7 +67,7 @@ public class HomeWorkThree {
         //Тест работы ссылок
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -72,7 +75,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://testingonetv.livejournal.com/pics/catalog");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -80,7 +83,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://testingonetv.livejournal.com/video");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -88,7 +91,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/inbox/");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -96,27 +99,93 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/for-authors/");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(a);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Заполняем профиль
+
+        driver.navigate().to("https://www.livejournal.com/manage/profile/?authas=");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        WebElement genderFemale = driver.findElement(By.xpath("//select[@name='gender']"));
+        genderFemale.click();
+        genderFemale.sendKeys("Женский");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement genderMale = driver.findElement(By.xpath("//select[@name='gender']"));
+        genderMale.click();
+        genderMale.sendKeys("Мужской");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement day = driver.findElement(By.xpath("//select[@name='day']"));
+        day.sendKeys("25");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement month = driver.findElement(By.xpath("//select[@name='month']"));
+        month.sendKeys("Май");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement year = driver.findElement(By.xpath("//select[@name='year']"));
+        year.sendKeys("1987");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement whoShareBDay = driver.findElement(By.xpath("//select[@name='opt_sharebday']"));
+        whoShareBDay.sendKeys("Всем");
+
+        try {
+            Thread.sleep(b);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        WebElement howShareBDay = driver.findElement(By.xpath("//select[@name='opt_showbday']"));
+        howShareBDay.sendKeys("месяц, день и год");
+
+        try {
+            Thread.sleep(b);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
         // Логаут из системы
-        String head = ".s-header-item--user";
-
-        WebElement headerClickExit = driver.findElement(By.cssSelector(head));
-        headerClickExit.click();
-
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
 
         driver.navigate().to("https://www.livejournal.com/logout.bml?ret=1&user=testingonetv&sessid=93");
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(b);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -125,7 +194,7 @@ public class HomeWorkThree {
         exitButton.click();
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(b);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
