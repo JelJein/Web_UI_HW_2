@@ -4,10 +4,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.util.concurrent.TimeUnit;
 
-public class HomeWorkThree {
+public class HwThreeTest {
 
     public static void main(String[] args) throws RuntimeException {
 
@@ -20,16 +19,14 @@ public class HomeWorkThree {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://www.livejournal.com/");
 
-        //Логин в систему
-
         WebElement hwFirst = driver.findElement(By.xpath("//a[contains(text(),'Войти')]"));
         hwFirst.click();
 
-        Integer a = 250;
-        Integer b = 3000;
+        Integer fast = 250;
+        Integer slow = 3000;
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -38,7 +35,7 @@ public class HomeWorkThree {
         userName.sendKeys("TestingOneTV");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -47,7 +44,7 @@ public class HomeWorkThree {
         userPassword.sendKeys("JustForTest1987");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -56,7 +53,7 @@ public class HomeWorkThree {
         checkBox.click();
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -67,7 +64,7 @@ public class HomeWorkThree {
         //Тест работы ссылок
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -75,7 +72,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://testingonetv.livejournal.com/pics/catalog");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -83,7 +80,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://testingonetv.livejournal.com/video");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -91,7 +88,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/inbox/");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -99,7 +96,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/for-authors/");
 
         try {
-            Thread.sleep(a);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -109,7 +106,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/manage/profile/?authas=");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -120,7 +117,7 @@ public class HomeWorkThree {
         genderFemale.sendKeys("Женский");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -130,7 +127,7 @@ public class HomeWorkThree {
         genderMale.sendKeys("Мужской");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -139,7 +136,7 @@ public class HomeWorkThree {
         day.sendKeys("25");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -148,7 +145,7 @@ public class HomeWorkThree {
         month.sendKeys("Май");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -157,7 +154,7 @@ public class HomeWorkThree {
         year.sendKeys("1987");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -166,7 +163,7 @@ public class HomeWorkThree {
         whoShareBDay.sendKeys("Всем");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -175,7 +172,7 @@ public class HomeWorkThree {
         howShareBDay.sendKeys("месяц, день и год");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -185,7 +182,7 @@ public class HomeWorkThree {
         driver.navigate().to("https://www.livejournal.com/logout.bml?ret=1&user=testingonetv&sessid=93");
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -194,14 +191,11 @@ public class HomeWorkThree {
         exitButton.click();
 
         try {
-            Thread.sleep(b);
+            Thread.sleep(fast);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
         driver.quit();
     }
-
-
-
 }
